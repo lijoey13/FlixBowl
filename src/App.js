@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import Header from './Header';
 import Homepage from './Homepage';
-import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import Forum from './pages/Forum';
 import Movies from './pages/Movies';
 import Groups from './pages/Groups';
@@ -20,6 +20,15 @@ function App() {
       <Router>
         <Header />
         <Switch>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return (
+              <Redirect to="/home" />
+             )
+           }}
+              />
           <Route path ='/home' component={Homepage} />
           <Route path ='/forum' component={Forum} />
           <Route path ='/movies' component={Movies} />
