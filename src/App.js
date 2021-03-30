@@ -1,23 +1,33 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import Header from './Header';
+import Homepage from './Homepage';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Forum from './pages/Forum';
+import Movies from './pages/Movies';
+import Groups from './pages/Groups';
+import Profile from './pages/Profile';
+
+import {GlobalProvider} from './context/GlobalState';
+
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <GlobalProvider>
+      <Router>
+        <Header />
+        <Switch>
+          <Route path ='/home' component={Homepage} />
+          <Route path ='/forum' component={Forum} />
+          <Route path ='/movies' component={Movies} />
+          <Route path ='/groups' component={Groups} />
+          <Route path ='/profile' component={Profile} />
+        </Switch>
+      </Router>
+      </GlobalProvider>
     </div>
   );
 }

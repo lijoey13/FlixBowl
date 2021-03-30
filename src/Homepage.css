@@ -1,0 +1,21 @@
+
+
+.home__titles {
+    padding: 20px 20px;
+    font-size: small;
+    color: rgb(126, 139, 255);
+}
+
+.home__titles > h1 {
+    margin-left: 150px;
+    
+}
+
+.trending__posts {
+    padding: 70px;
+    background-color: white;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 50px;
+}
+
